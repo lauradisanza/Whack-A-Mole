@@ -35,9 +35,12 @@ function peep() {
     }, time);
 }
 
+//Start the game
 function startGame() {
     scoreBoard.textContent = 0;
     timeUp = false;
     peep();
     setTimeout(() => timeUp = true, 10000);
 }
+
+//Whack the mole
