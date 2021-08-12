@@ -4,7 +4,7 @@ const moles = document.querySelectorAll('.mole');
 let lastHole;
 
 //Random amount of time between moles popping up
-function randTime(min, max) {
+function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
@@ -19,4 +19,16 @@ function randomHole(holes) {
 
     lastHole = hole;
     return hole;
+}
+
+//Moles popping up
+function peep() {
+    const time = randomTime(200, 1000);
+    const hole = randomHole(holes);
+    //Make mole pop up
+    hole.classList.add('up');
+    //Make mole go back down
+    setTimeout(() => {
+        hole.classList.remove('up');
+    }, time);
 }
