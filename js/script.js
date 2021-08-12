@@ -2,6 +2,7 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const moles = document.querySelectorAll('.mole');
 let lastHole;
+let timeUp = false;
 
 //Random amount of time between moles popping up
 function randomTime(min, max) {
@@ -30,5 +31,6 @@ function peep() {
     //Make mole go back down
     setTimeout(() => {
         hole.classList.remove('up');
+        if(!timeUp) peep();
     }, time);
 }
